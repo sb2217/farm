@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — KisanMart</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<nav id="navbar" class="scrolled">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="KisanMart">
+      <div><span class="nav-logo-text">KisanMart</span><span class="nav-logo-sub">Organic Fertilizers</span></div>
+    </a>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><button id="lang-toggle" class="lang-btn">Hindi</button></li>
+      <li><a href="cart.html" class="nav-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Cart <span class="cart-badge">0</span></a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <h1>Contact Us</h1>
+    <p>We are here to help. Reach out through any channel that works for you.</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i></span>
+      <span class="current">Contact</span>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div data-aos-left>
+        <h3>Get in Touch</h3>
+        <p style="color:var(--text-muted); margin-bottom:28px; font-size:0.95rem; line-height:1.75;">Whether you have a question about our products, need advice on which fertilizer suits your soil, or want to place a bulk order — our team of agronomists is ready to assist you.</p>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-item-text">
+            <strong>Phone</strong>
+            <span class="editable-text" data-edit-key="contactPhone">+91 98765 43210</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <span class="editable-text" data-edit-key="contactEmail">hello@kisanmart.in</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="contact-item-text">
+            <strong>Office Address</strong>
+            <span class="editable-text" data-edit-key="contactAddress">123 Green Street, Civil Lines,<br>Agra, Uttar Pradesh 282001</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="contact-item-text">
+            <strong>Business Hours</strong>
+            <span>Monday to Saturday: 9:00 AM to 6:00 PM</span>
+          </div>
+        </div>
+
+        <a href="https://wa.me/919876543210?text=Hello%20KisanMart%2C%20I%20have%20a%20query." target="_blank" class="whatsapp-cta">
+          <i class="fa-brands fa-whatsapp"></i>
+          <div class="whatsapp-cta-text">
+            <strong>Chat on WhatsApp</strong>
+            <span>Fastest response — usually within minutes</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrap" data-aos-right>
+        <h3>Send a Message</h3>
+        <form id="contact-form" onsubmit="submitContactForm(event)">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="cf-name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="cf-phone" placeholder="10-digit mobile number" maxlength="10">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="cf-email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <select class="form-control" id="cf-subject">
+              <option value="">Select a topic</option>
+              <option>Product Enquiry</option>
+              <option>Bulk Order / Dealer Enquiry</option>
+              <option>Delivery Tracking</option>
+              <option>Return or Refund</option>
+              <option>Technical / Agronomist Support</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Message</label>
+            <textarea class="form-control" id="cf-message" rows="5" placeholder="Describe your query or requirement..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-royal" style="width:100%; justify-content:center; margin-top:8px;">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+        <div id="form-success" style="display:none; text-align:center; padding:32px 0;">
+          <i class="fa-solid fa-circle-check" style="font-size:2.5rem; color:var(--royal-mid); display:block; margin-bottom:14px;"></i>
+          <h3 style="font-family:'Cinzel',serif; color:var(--royal-deep); margin-bottom:10px;">Message Sent</h3>
+          <p style="color:var(--text-muted);">Thank you for reaching out. Our team will respond within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-champagne">
+  <div class="container">
+    <div class="section-header" data-aos>
+      <div class="ornament"><div class="ornament-line"></div><span class="ornament-icon">* * *</span><div class="ornament-line"></div></div>
+      <h2>Frequently Asked Questions</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="max-width:760px; margin:0 auto;">
+      <div class="why-card" data-aos style="margin-bottom:16px; border-radius:var(--radius);">
+        <h3 style="font-size:1rem; margin-bottom:8px;">Do you offer bulk pricing for large orders?</h3>
+        <p>Yes. For orders above 500 kg, we offer tiered bulk pricing. Please contact us via phone or WhatsApp with your quantity and crop type for a custom quote.</p>
+      </div>
+      <div class="why-card" data-aos style="margin-bottom:16px;">
+        <h3 style="font-size:1rem; margin-bottom:8px;">How long does delivery take?</h3>
+        <p>Standard delivery takes 3 to 5 business days. We ship to all pin codes across India via our logistics partners. Real-time tracking is provided via SMS.</p>
+      </div>
+      <div class="why-card" data-aos style="margin-bottom:16px;">
+        <h3 style="font-size:1rem; margin-bottom:8px;">Are your products safe for organic certification?</h3>
+        <p>Absolutely. All KisanMart products are NPOP certified and approved for use in certified organic farms. Certificate copies are available upon request.</p>
+      </div>
+      <div class="why-card" data-aos>
+        <h3 style="font-size:1rem; margin-bottom:8px;">What is your return policy?</h3>
+        <p>We accept returns within 7 days of delivery if the product is damaged or not as described. Cash on Delivery and prepaid orders are both eligible for returns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo" style="margin-bottom:0;"><img src="images/logo.png" alt="KisanMart" style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(201,162,39,0.4);"><div><span class="footer-logo-text">KisanMart</span><span class="footer-logo-sub">Organic Fertilizers</span></div></div><p>Bringing nature's finest to Indian farms since 2010.</p><span class="footer-badge">NPOP Certified Organic</span></div>
+      <div><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="cart.html">Cart</a></li></ul></div>
+      <div><h4>Products</h4><ul><li><a href="products.html">Premium Compost</a></li><li><a href="products.html">Vermicompost</a></li><li><a href="products.html">Neem Cake</a></li><li><a href="products.html">Bio-Fertilizer</a></li><li><a href="products.html">Seaweed Extract</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4><p><i class="fa-solid fa-phone"></i> +91 98765 43210</p><p><i class="fa-solid fa-envelope"></i> hello@kisanmart.in</p><p><i class="fa-solid fa-location-dot"></i> 123 Green Street, Agra, UP 282001</p><a href="https://wa.me/919876543210" target="_blank" class="footer-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container"><p>2025 KisanMart. All Rights Reserved.</p></div></div>
+</footer>
+<a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
+<script src="js/i18n.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="admin/edit-mode.js"></script>
+<script>
+function submitContactForm(e) {
+  e.preventDefault();
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+document.addEventListener('DOMContentLoaded', () => {
+  applyTranslations();
+  const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('aos-animate'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+  document.querySelectorAll('[data-aos],[data-aos-left],[data-aos-right]').forEach(el => observer.observe(el));
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+  if (hamburger) hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); navMenu.classList.toggle('open'); });
+  const langBtn = document.getElementById('lang-toggle');
+  if (langBtn) langBtn.addEventListener('click', toggleLanguage);
+  updateCartBadge();
+});
+</script>
+</body>
+</html>

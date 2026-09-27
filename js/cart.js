@@ -29,7 +29,7 @@ function addToCart(productId, qty = 1) {
     cart.push({ id: productId, qty: qty });
   }
   saveCart();
-  showToast(t('addToCart') + ' ✓');
+  showToast('Added to Cart');
 }
 
 function removeFromCart(productId) {
@@ -65,9 +65,9 @@ function renderCart() {
   if (cart.length === 0) {
     container.innerHTML = `
       <div class="cart-empty">
-        <div class="cart-empty-icon">🛒</div>
+        <div class="cart-empty-icon"><i class="fa-solid fa-cart-shopping"></i></div>
         <h3 data-i18n="cartEmpty">${t('cartEmpty')}</h3>
-        <a href="index.html" class="btn btn-primary" data-i18n="cartShop">${t('cartShop')}</a>
+        <a href="products.html" class="btn btn-royal" data-i18n="cartShop">${t('cartShop')}</a>
       </div>`;
     if (summaryEl) summaryEl.style.display = 'none';
     return;

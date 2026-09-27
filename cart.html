@@ -6,149 +6,129 @@
   <title>Cart — KisanMart</title>
   <link rel="icon" href="images/logo.png">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-<!-- NAVBAR -->
 <nav id="navbar" class="scrolled">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="KisanMart Logo">
-      <span class="nav-logo-text" data-i18n="navBrand">KisanMart</span>
+      <img src="images/logo.png" alt="KisanMart">
+      <div><span class="nav-logo-text">KisanMart</span><span class="nav-logo-sub">Organic Fertilizers</span></div>
     </a>
     <ul id="nav-menu">
-      <li><a href="index.html#products" data-i18n="navProducts">Products</a></li>
-      <li><button id="lang-toggle" class="lang-btn" data-i18n="langToggle">हिन्दी</button></li>
-      <li>
-        <a href="cart.html" class="nav-cart-btn">
-          🛒 <span data-i18n="navCart">Cart</span>
-          <span class="cart-badge">0</span>
-        </a>
-      </li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button id="lang-toggle" class="lang-btn">Hindi</button></li>
+      <li><a href="cart.html" class="nav-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Cart <span class="cart-badge">0</span></a></li>
     </ul>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<!-- CART PAGE -->
 <div class="cart-page">
   <div class="container">
-    <h2 style="color:var(--green-dark);margin-bottom:32px;" data-i18n="cartTitle">Your Cart</h2>
+    <div style="margin-bottom:32px;">
+      <div class="breadcrumb" style="justify-content:flex-start; margin-bottom:10px;">
+        <a href="index.html">Home</a>
+        <span><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i></span>
+        <a href="products.html">Products</a>
+        <span><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;color:var(--text-muted);"></i></span>
+        <span class="current" style="color:var(--text-muted);">Cart</span>
+      </div>
+      <h2 style="font-family:'Cinzel',serif; color:var(--royal-deep);" data-i18n="cartTitle">Your Cart</h2>
+    </div>
 
     <div class="cart-layout">
-      <!-- Cart Items Column -->
       <div>
-        <div id="cart-items">
-          <!-- Filled by cart.js -->
-        </div>
-        <a href="index.html" class="btn btn-outline" style="margin-top:16px;display:inline-flex;" data-i18n="cartShop">
-          ← Continue Shopping
+        <div id="cart-items"></div>
+        <a href="products.html" class="btn btn-outline-gold" style="margin-top:18px; display:inline-flex;">
+          <i class="fa-solid fa-arrow-left"></i> <span data-i18n="cartShop">Continue Shopping</span>
         </a>
       </div>
 
-      <!-- Summary + Checkout Column -->
       <div id="cart-summary" style="display:none;">
         <div class="cart-summary-box">
           <h3>Order Summary</h3>
-
           <div class="summary-row">
             <span class="summary-label" data-i18n="cartSubtotal">Subtotal</span>
-            <span class="summary-value" id="cart-subtotal">₹0</span>
+            <span class="summary-value" id="cart-subtotal">Rs. 0</span>
           </div>
           <div class="summary-row">
             <span class="summary-label" data-i18n="cartDelivery">Delivery</span>
-            <span class="summary-value free-delivery" id="cart-delivery" data-i18n="cartFree">FREE</span>
+            <span class="free-delivery" id="cart-delivery" data-i18n="cartFree">FREE</span>
           </div>
           <div class="summary-row total">
             <span data-i18n="cartTotal">Total</span>
-            <span id="cart-total">₹0</span>
+            <span id="cart-total">Rs. 0</span>
           </div>
 
-          <!-- Delivery Address Form -->
           <div class="checkout-form">
-            <h3 data-i18n="cartAddress">Delivery Address</h3>
-
+            <h4 data-i18n="cartAddress">Delivery Address</h4>
             <div class="form-group">
-              <input type="text" id="checkout-name" data-i18n="cartName" placeholder="Full Name" maxlength="80">
+              <label class="form-label" data-i18n="cartName">Full Name</label>
+              <input type="text" class="form-control" id="checkout-name" placeholder="Your full name" maxlength="80">
             </div>
             <div class="form-group">
-              <input type="tel" id="checkout-phone" data-i18n="cartPhone" placeholder="Phone Number (10 digits)" maxlength="10" pattern="[6-9][0-9]{9}">
+              <label class="form-label" data-i18n="cartPhone">Phone Number</label>
+              <input type="tel" class="form-control" id="checkout-phone" placeholder="10-digit mobile" maxlength="10">
             </div>
             <div class="form-group">
-              <input type="text" id="checkout-address" data-i18n="cartAddressLine" placeholder="House / Farm Address" maxlength="200">
+              <label class="form-label" data-i18n="cartAddressLine">Address</label>
+              <input type="text" class="form-control" id="checkout-address" placeholder="House / Farm Address" maxlength="200">
             </div>
             <div class="form-group">
-              <input type="text" id="checkout-city" data-i18n="cartCity" placeholder="City / Village" maxlength="80">
+              <label class="form-label" data-i18n="cartCity">City / Village</label>
+              <input type="text" class="form-control" id="checkout-city" placeholder="City or Village" maxlength="80">
             </div>
             <div class="form-group">
-              <select id="checkout-state">
-                <option value="">— Select State —</option>
-                <option>Andhra Pradesh</option><option>Arunachal Pradesh</option>
-                <option>Assam</option><option>Bihar</option><option>Chhattisgarh</option>
-                <option>Goa</option><option>Gujarat</option><option>Haryana</option>
-                <option>Himachal Pradesh</option><option>Jharkhand</option>
-                <option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
-                <option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option>
-                <option>Mizoram</option><option>Nagaland</option><option>Odisha</option>
-                <option>Punjab</option><option>Rajasthan</option><option>Sikkim</option>
-                <option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option>
-                <option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
-                <option>Delhi</option><option>Jammu & Kashmir</option><option>Ladakh</option>
+              <label class="form-label" data-i18n="cartState">State</label>
+              <select class="form-control" id="checkout-state">
+                <option value="">Select State</option>
+                <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option><option>Bihar</option><option>Chhattisgarh</option><option>Goa</option><option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option><option>Jharkhand</option><option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option><option>Odisha</option><option>Punjab</option><option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option><option>Delhi</option><option>Jammu and Kashmir</option><option>Ladakh</option>
               </select>
             </div>
             <div class="form-group">
-              <input type="text" id="checkout-pin" data-i18n="cartPin" placeholder="PIN Code" maxlength="6" pattern="[0-9]{6}">
+              <label class="form-label" data-i18n="cartPin">PIN Code</label>
+              <input type="text" class="form-control" id="checkout-pin" placeholder="6-digit PIN" maxlength="6">
             </div>
-
             <div class="checkout-buttons">
-              <button onclick="initRazorpay()" class="btn btn-primary btn-lg" data-i18n="cartPayNow">
-                💳 Pay Now with Razorpay/UPI
+              <button onclick="initRazorpay()" class="btn btn-gold btn-lg" data-i18n="cartPayNow">
+                <i class="fa-solid fa-credit-card"></i> Pay with Razorpay / UPI
               </button>
               <button onclick="placeCOD()" class="btn btn-cod btn-lg" data-i18n="cartCOD">
-                💵 Cash on Delivery
+                <i class="fa-solid fa-money-bill-wave"></i> Cash on Delivery
               </button>
             </div>
           </div>
         </div>
-
-        <!-- Trust badges -->
-        <div style="display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap;">
-          <span style="background:var(--green-pale);color:var(--green-dark);padding:6px 14px;border-radius:50px;font-size:0.78rem;font-weight:600;">🔒 Secure Payment</span>
-          <span style="background:var(--green-pale);color:var(--green-dark);padding:6px 14px;border-radius:50px;font-size:0.78rem;font-weight:600;">🚚 Free Delivery</span>
-          <span style="background:var(--green-pale);color:var(--green-dark);padding:6px 14px;border-radius:50px;font-size:0.78rem;font-weight:600;">✅ 100% Organic</span>
+        <div class="trust-badges">
+          <span class="trust-badge-pill"><i class="fa-solid fa-lock" style="margin-right:4px;"></i> Secure</span>
+          <span class="trust-badge-pill"><i class="fa-solid fa-truck" style="margin-right:4px;"></i> Free Delivery</span>
+          <span class="trust-badge-pill"><i class="fa-solid fa-leaf" style="margin-right:4px;"></i> Organic</span>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float">💬</a>
-
-<!-- Scripts -->
+<a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
 <script src="js/i18n.js"></script>
 <script src="js/products.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/checkout.js"></script>
-<!-- Razorpay SDK -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   applyTranslations();
   renderCart();
-  // Language toggle
   const langBtn = document.getElementById('lang-toggle');
   if (langBtn) langBtn.addEventListener('click', () => { toggleLanguage(); renderCart(); });
-  // Hamburger
   const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('nav-menu');
-  if (hamburger) hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navMenu.classList.toggle('open');
-  });
+  const navMenu = document.getElementById('nav-menu');
+  if (hamburger) hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); navMenu.classList.toggle('open'); });
 });
 </script>
-
 </body>
 </html>

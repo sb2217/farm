@@ -17,13 +17,13 @@ function validateForm() {
     }
   });
   if (!valid) {
-    showToast('⚠️ Please fill all delivery details');
+    showToast('Please fill all delivery details');
     return false;
   }
   const phone = document.getElementById('checkout-phone').value.trim();
   if (!/^[6-9]\d{9}$/.test(phone)) {
     document.getElementById('checkout-phone').classList.add('error');
-    showToast('⚠️ Please enter a valid 10-digit Indian mobile number');
+    showToast('Please enter a valid 10-digit Indian mobile number');
     return false;
   }
   return true;
