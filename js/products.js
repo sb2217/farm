@@ -12,7 +12,7 @@ const products = [
     rating: 4.8,
     reviews: 342,
     badge: { en: "Best Seller", hi: "बेस्ट सेलर" },
-    badgeColor: "#D4A017",
+    badgeColor: "#2A5230",
     image: "images/products/compost.jpg",
     desc: {
       en: "Rich organic compost made from farm waste. Enriches soil with essential nutrients and improves water retention. Ideal for wheat, rice, vegetables and all crops.",
