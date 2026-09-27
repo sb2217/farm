@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed — KisanMart</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background: var(--cream);">
+
+<div class="success-page">
+  <div class="success-card">
+    <div class="success-icon">✅</div>
+
+    <h1 data-i18n="successTitle">Order Placed Successfully!</h1>
+    <p data-i18n="successMsg">Thank you for your order. We will deliver it within 3–5 business days.</p>
+
+    <div class="success-order-id" id="order-info">
+      🎉 Your order is confirmed!
+    </div>
+
+    <!-- Order summary will be injected here -->
+    <div id="order-summary-table" style="text-align:left;width:100%;margin-bottom:24px;"></div>
+
+    <div class="success-buttons">
+      <a id="whatsapp-share" href="#" target="_blank" class="btn btn-gold" data-i18n="successWhatsapp">
+        💬 Share on WhatsApp
+      </a>
+      <a href="index.html" class="btn btn-primary" data-i18n="successShop">
+        🛒 Continue Shopping
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/products.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  applyTranslations();
+
+  // Get order info from URL params
+  const params = new URLSearchParams(window.location.search);
+  const method = params.get('method') || 'razorpay';
+  const orderId = params.get('id') || 'ORD' + Date.now();
+
+  // Show order ID
+  const orderInfoEl = document.getElementById('order-info');
+  const methodLabel = method === 'cod' ? '💵 Cash on Delivery' : '💳 Razorpay/UPI';
+  orderInfoEl.innerHTML = `
+    🎉 Order ID: <strong>${orderId}</strong><br>
+    Payment: ${methodLabel}
+  `;
+
+  // Load last order details
+  const lastOrder = JSON.parse(localStorage.getItem('kisanmart_last_order') || 'null');
+  const summaryEl = document.getElementById('order-summary-table');
+  if (lastOrder && lastOrder.items) {
+    summaryEl.innerHTML = `
+      <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+        <thead>
+          <tr style="background:var(--cream-dark);">
+            <th style="padding:8px;text-align:left;border-radius:8px 0 0 8px;">Product</th>
+            <th style="padding:8px;text-align:center;">Qty</th>
+            <th style="padding:8px;text-align:right;border-radius:0 8px 8px 0;">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${lastOrder.items.map(item => `
+            <tr style="border-bottom:1px solid var(--cream-dark);">
+              <td style="padding:8px;">${item.name}</td>
+              <td style="padding:8px;text-align:center;">${item.qty}</td>
+              <td style="padding:8px;text-align:right;font-weight:700;">₹${(item.price * item.qty).toLocaleString('en-IN')}</td>
+            </tr>`).join('')}
+          <tr>
+            <td colspan="2" style="padding:10px 8px;font-weight:800;color:var(--green-dark);">Total</td>
+            <td style="padding:10px 8px;text-align:right;font-weight:800;color:var(--green-dark);font-size:1.05rem;">
+              ₹${lastOrder.total.toLocaleString('en-IN')}
+            </td>
+          </tr>
+        </tbody>
+      </table>`;
+  }
+
+  // WhatsApp share link
+  const waMsg = encodeURIComponent(
+    `🌿 I just ordered from KisanMart!\nOrder ID: ${orderId}\nPayment: ${method === 'cod' ? 'Cash on Delivery' : 'Online'}\n\nCheck out their organic fertilizers: https://kisanmart.in`
+  );
+  document.getElementById('whatsapp-share').href = `https://wa.me/?text=${waMsg}`;
+});
+</script>
+
+</body>
+</html>

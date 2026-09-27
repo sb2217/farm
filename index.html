@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KisanMart — 100% Organic Fertilizers for Indian Farmers. Buy Compost, Vermicompost, Neem Cake, Bio-Fertilizers, Seaweed Extract online.">
+  <title>KisanMart — Organic Fertilizer Store for Indian Farmers</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google Fonts loaded via CSS -->
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!--  NAVBAR                                                  -->
+<!-- ════════════════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="images/logo.png" alt="KisanMart Logo">
+      <span class="nav-logo-text" data-i18n="navBrand">KisanMart</span>
+    </a>
+
+    <ul id="nav-menu">
+      <li><a href="#hero"         data-i18n="navHome">Home</a></li>
+      <li><a href="#products"     data-i18n="navProducts">Products</a></li>
+      <li><a href="#stats"        data-i18n="navStats">Our Stats</a></li>
+      <li><a href="#testimonials" data-i18n="navTestimonials">Reviews</a></li>
+      <li><a href="#contact"      data-i18n="navContact">Contact</a></li>
+      <li>
+        <button id="lang-toggle" class="lang-btn" data-i18n="langToggle">हिन्दी</button>
+      </li>
+      <li>
+        <a href="cart.html" class="nav-cart-btn">
+          🛒 <span data-i18n="navCart">Cart</span>
+          <span class="cart-badge">0</span>
+        </a>
+      </li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!--  HERO                                                    -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag editable-text" data-edit-key="heroTag" data-i18n="heroTag">🌿 100% Organic Certified</div>
+    <h1 class="editable-text" data-edit-key="heroTitle" data-i18n="heroTitle">
+      Pure Organic Fertilizers for Healthy Crops
+    </h1>
+    <p class="editable-text" data-edit-key="heroSubtitle" data-i18n="heroSubtitle">
+      Trusted by 10,000+ Indian Farmers — 100% Natural, 100% Safe
+    </p>
+    <div class="hero-buttons">
+      <a href="#products" class="btn btn-gold btn-lg" data-i18n="heroCta">Shop Now</a>
+      <a href="#why" class="btn btn-lg" style="background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.5);" data-i18n="heroLearnMore">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!--  TRUST BAR                                               -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div id="trust-bar">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <span class="trust-num editable-text" data-edit-key="trust1Num" data-i18n="trust1Num">10,000+</span>
+        <span class="trust-label editable-text" data-edit-key="trust1Label" data-i18n="trust1Label">Farmers Served</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num editable-text" data-edit-key="trust2Num" data-i18n="trust2Num">100%</span>
+        <span class="trust-label editable-text" data-edit-key="trust2Label" data-i18n="trust2Label">Organic Certified</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num editable-text" data-edit-key="trust3Num" data-i18n="trust3Num">15+</span>
+        <span class="trust-label editable-text" data-edit-key="trust3Label" data-i18n="trust3Label">Years Experience</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num editable-text" data-edit-key="trust4Num" data-i18n="trust4Num">5</span>
+        <span class="trust-label editable-text" data-edit-key="trust4Label" data-i18n="trust4Label">Premium Products</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!--  PRODUCTS                                                -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section id="products" class="section">
+  <div class="container">
+    <div class="section-header" data-aos>
+      <h2 data-i18n="productsTitle">Our Products</h2>
+      <p data-i18n="productsSubtitle">Handpicked organic fertilizers for every type of crop and soil</p>
+      <div class="underline"></div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all"    data-i18n="filterAll">All</button>
+      <button class="filter-btn"        data-filter="compost" data-i18n="filterCompost">Compost</button>
+      <button class="filter-btn"        data-filter="bio"     data-i18n="filterBio">Bio-Fertilizer</button>
+      <button class="filter-btn"        data-filter="extract" data-i18n="filterExtract">Extract</button>
+    </div>
+
+    <!-- Product Grid — filled by app.js -->
+    <div id="products-grid" class="products-grid"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!--  STATS & CHARTS                                          -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section id="stats" class="section section-alt">
+  <div class="container">
+    <div class="section-header" data-aos>
+      <h2 data-i18n="statsTitle">Why Farmers Trust Us</h2>
+      <p data-i18n="statsSubtitle">Real results backed by data — see the difference organic makes</p>
+      <div class="underline"></div>
+    </div>
+
+    <!-- Animated Counters -->
+    <div class="stats-counters">
+      <div class="stat-card" data-aos>
+        <div class="stat-icon">📅</div>
+        <span class="stat-number" data-target="15" data-suffix="+">0</span>
+        <span class="stat-label editable-text" data-edit-key="statYears" data-i18n="statYears">Years in Business</span>
+      </div>
+      <div class="stat-card" data-aos>
+        <div class="stat-icon">👨‍🌾</div>
+        <span class="stat-number" data-target="10000" data-suffix="+">0</span>
+        <span class="stat-label editable-text" data-edit-key="statFarmers" data-i18n="statFarmers">Happy Farmers</span>
+      </div>
+      <div class="stat-card" data-aos>
+        <div class="stat-icon">📦</div>
+        <span class="stat-number" data-target="50000" data-suffix="+">0</span>
+        <span class="stat-label editable-text" data-edit-key="statProducts" data-i18n="statProducts">Products Sold</span>
+      </div>
+      <div class="stat-card" data-aos>
+        <div class="stat-icon">🗺️</div>
+        <span class="stat-number" data-target="22" data-suffix="+">0</span>
+        <span class="stat-label editable-text" data-edit-key="statStates" data-i18n="statStates">States Covered</span>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts-grid">
+      <div class="chart-card" data-aos>
+        <h3 data-i18n="chartYieldTitle">Yield Improvement by Product (%)</h3>
+        <div class="chart-wrap"><canvas id="yieldChart"></canvas></div>
+      </div>
+      <div class="chart-card" data-aos>
+        <h3 data-i18n="chartGrowthTitle">Farmers Served (2020–2025)</h3>
+        <div class="chart-wrap"><canvas id="growthChart"></canvas></div>
+      </div>
+      <div class="chart-card" data-aos>
+        <h3 data-i18n="chartShareTitle">Product Sales Share</h3>
+        <div class="chart-wrap"><canvas id="shareChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!--  TESTIMONIALS                                            -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="section-header" data-aos>
+      <h2 data-i18n="testimonialsTitle">What Farmers Say</h2>
+      <p data-i18n="testimonialsSubtitle">Real reviews from farmers across India</p>
+      <div class="underline"></div>
+    </div>
+
+    <div class="testimonial-carousel">
+      <div class="testimonial-track" id="testimonials-track"></div>
+      <div class="testimonial-controls">
+        <button class="carousel-btn" onclick="prevTestimonial()">‹</button>
+        <div id="testimonial-dots"></div>
+        <button class="carousel-btn" onclick="nextTestimonial()">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!--  WHY ORGANIC                                             -->
+<!-- ════════════════════════════════════════════════════════ -->
+<section id="why" class="section section-alt">
+  <div class="container">
+    <div class="section-header" data-aos>
+      <h2 data-i18n="whyTitle">Why Choose Organic?</h2>
+      <p data-i18n="whySub">Organic fertilizers are better for your crops, your soil, and your family</p>
+      <div class="underline"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card" data-aos>
+        <div class="why-icon">🛡️</div>
+        <h3 class="editable-text" data-edit-key="why1Title" data-i18n="why1Title">Safe for Family</h3>
+        <p class="editable-text" data-edit-key="why1Desc" data-i18n="why1Desc">No harmful chemicals. Safe for children and animals on the farm.</p>
+      </div>
+      <div class="why-card" data-aos>
+        <div class="why-icon">📈</div>
+        <h3 class="editable-text" data-edit-key="why2Title" data-i18n="why2Title">Better Yield</h3>
+        <p class="editable-text" data-edit-key="why2Desc" data-i18n="why2Desc">Organic matter improves soil structure and boosts long-term productivity.</p>
+      </div>
+      <div class="why-card" data-aos>
+        <div class="why-icon">💰</div>
+        <h3 class="editable-text" data-edit-key="why3Title" data-i18n="why3Title">Saves Money</h3>
+        <p class="editable-text" data-edit-key="why3Desc" data-i18n="why3Desc">Healthier soil needs less input over time. Save more each season.</p>
+      </div>
+      <div class="why-card" data-aos>
+        <div class="why-icon">🌍</div>
+        <h3 class="editable-text" data-edit-key="why4Title" data-i18n="why4Title">Eco Friendly</h3>
+        <p class="editable-text" data-edit-key="why4Desc" data-i18n="why4Desc">Protect rivers, groundwater, and local wildlife with natural inputs.</p>
+      </div>
+      <div class="why-card" data-aos>
+        <div class="why-icon">🏛️</div>
+        <h3 class="editable-text" data-edit-key="why5Title" data-i18n="why5Title">Govt Approved</h3>
+        <p class="editable-text" data-edit-key="why5Desc" data-i18n="why5Desc">All products carry NPOP organic certification as per govt standards.</p>
+      </div>
+      <div class="why-card" data-aos>
+        <div class="why-icon">🚚</div>
+        <h3 class="editable-text" data-edit-key="why6Title" data-i18n="why6Title">Fast Delivery</h3>
+        <p class="editable-text" data-edit-key="why6Desc" data-i18n="why6Desc">Delivered to your village in 3–5 days with real-time tracking.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!--  FOOTER                                                  -->
+<!-- ════════════════════════════════════════════════════════ -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <img src="images/logo.png" alt="KisanMart">
+          <span class="nav-logo-text" data-i18n="navBrand">KisanMart</span>
+        </div>
+        <p class="editable-text" data-edit-key="footerTagline" data-i18n="footerTagline">Bringing nature's best to Indian farms</p>
+        <span class="footer-badge" data-i18n="footerOrganic">100% Organic</span>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">🏠 Home</a></li>
+          <li><a href="#products">🌿 Products</a></li>
+          <li><a href="#stats">📊 Stats</a></li>
+          <li><a href="#testimonials">⭐ Reviews</a></li>
+          <li><a href="cart.html">🛒 Cart</a></li>
+        </ul>
+      </div>
+
+      <!-- Products -->
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#products">🍂 Premium Compost</a></li>
+          <li><a href="#products">🪱 Vermicompost</a></li>
+          <li><a href="#products">🌿 Neem Cake</a></li>
+          <li><a href="#products">🧪 Bio-Fertilizer</a></li>
+          <li><a href="#products">🌊 Seaweed Extract</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-contact">
+        <h4 data-i18n="footerContact">Contact Us</h4>
+        <p>📞 <span class="editable-text" data-edit-key="footerPhone" data-i18n="footerPhone">+91 98765 43210</span></p>
+        <p>✉️ <span class="editable-text" data-edit-key="footerEmail" data-i18n="footerEmail">hello@kisanmart.in</span></p>
+        <p>📍 <span class="editable-text" data-edit-key="footerAddress" data-i18n="footerAddress">123 Green Street, Agra, UP 282001</span></p>
+        <a href="https://wa.me/919876543210?text=Hi%20KisanMart%2C%20I%20want%20to%20buy%20organic%20fertilizer"
+           target="_blank" class="whatsapp-link" data-i18n="footerWhatsapp">
+          💬 Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p data-i18n="footerRights">© 2025 KisanMart. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/919876543210?text=Hi%20KisanMart%2C%20I%20want%20to%20buy%20organic%20fertilizer"
+   target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+  💬
+</a>
+
+<!-- ── Scripts ───────────────────────────────────────────── -->
+<script src="js/i18n.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="js/charts.js"></script>
+<script src="admin/edit-mode.js"></script>
+
+</body>
+</html>
