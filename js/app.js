@@ -23,14 +23,14 @@ function renderProducts(filter = 'all') {
           <span class="product-badge" style="background:${product.badgeColor}">${badge}</span>
           <span class="product-discount">-${discount}%</span>
           <div class="product-overlay">
-            <button onclick="addToCart(${product.id})" class="btn btn-overlay">${t('addToCart')}</button>
+            <button onclick="addToCart(${product.id})" class="btn btn-gold btn-sm">${t('addToCart')}</button>
           </div>
         </div>
         <div class="product-body">
           <h3 class="product-name">${name}</h3>
-          <p class="product-unit">📦 ${unit}</p>
+          <p class="product-unit"><i class="fa-solid fa-box" style="margin-right:6px;color:var(--forest);"></i>${unit}</p>
           <div class="product-highlights">
-            ${highlights.map(h => `<span class="tag">✓ ${h}</span>`).join('')}
+            ${highlights.map(h => `<span class="tag"><i class="fa-solid fa-check" style="margin-right:4px;"></i>${h}</span>`).join('')}
           </div>
           <p class="product-desc">${desc.substring(0, 80)}...</p>
           <div class="product-rating">
@@ -43,11 +43,11 @@ function renderProducts(filter = 'all') {
               <span class="product-price">₹${product.price.toLocaleString('en-IN')}</span>
               <span class="product-original">₹${product.originalPrice.toLocaleString('en-IN')}</span>
             </div>
-            <span class="product-instock">✔ ${t('inStock')}</span>
+            <span class="product-instock"><i class="fa-solid fa-circle-check" style="margin-right:4px;color:#2E7D32;"></i>${t('inStock')}</span>
           </div>
           <div class="product-actions">
-            <button onclick="addToCart(${product.id})" class="btn btn-outline">${t('addToCart')}</button>
-            <button onclick="buyNow(${product.id})" class="btn btn-primary">${t('buyNow')}</button>
+            <button onclick="addToCart(${product.id})" class="btn btn-outline-forest btn-sm">${t('addToCart')}</button>
+            <button onclick="buyNow(${product.id})" class="btn btn-gold btn-sm">${t('buyNow')}</button>
           </div>
         </div>
       </div>`;
@@ -146,38 +146,22 @@ function initNavbar() {
   // Mobile hamburger
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('nav-menu');
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      navMenu.classList.toggle('open');
+  if (hamburger && navMenu && !hamburger.dataset.bound) {
+    hamburger.dataset.bound = 'true';
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = hamburger.classList.toggle('open');
+      navMenu.classList.toggle('open', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
     });
     // Close on link click
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('open');
         navMenu.classList.remove('open');
+        document.body.classList.remove('nav-open');
       });
     });
-  }
-}
-
-// ── Leaf Particle Animation ───────────────────────────────
-function createLeaves() {
-  const hero = document.getElementById('hero');
-  if (!hero) return;
-  const leaves = ['🌿', '🍃', '☘️', '🌱'];
-  for (let i = 0; i < 12; i++) {
-    const leaf = document.createElement('div');
-    leaf.className = 'leaf-particle';
-    leaf.textContent = leaves[Math.floor(Math.random() * leaves.length)];
-    leaf.style.cssText = `
-      left: ${Math.random() * 100}%;
-      animation-delay: ${Math.random() * 6}s;
-      animation-duration: ${6 + Math.random() * 6}s;
-      font-size: ${14 + Math.random() * 12}px;
-      opacity: ${0.4 + Math.random() * 0.4};
-    `;
-    hero.appendChild(leaf);
   }
 }
 
@@ -200,7 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   renderProducts();
   renderTestimonials();
-  createLeaves();
   attachScrollObserver();
   initSmoothScroll();
 

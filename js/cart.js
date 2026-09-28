@@ -96,7 +96,7 @@ function renderCart() {
             <button onclick="updateQty(${product.id}, 1)" class="qty-btn">+</button>
           </div>
           <p class="cart-item-total">₹${total.toLocaleString('en-IN')}</p>
-          <button onclick="removeFromCart(${product.id})" class="cart-remove" title="${t('cartRemove')}">🗑️</button>
+          <button onclick="removeFromCart(${product.id})" class="cart-remove" title="${t('cartRemove')}"><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </div>`;
   }).join('');

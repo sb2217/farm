@@ -33,7 +33,7 @@ function initRazorpay() {
   if (!validateForm()) return;
   const totalAmount = getCartTotal();
   if (totalAmount === 0) {
-    showToast('🛒 Your cart is empty!');
+    showToast('Your cart is empty');
     return;
   }
 
@@ -74,11 +74,11 @@ function initRazorpay() {
   try {
     const rzp = new Razorpay(options);
     rzp.on('payment.failed', function(response) {
-      showToast('❌ Payment failed: ' + response.error.description);
+      showToast('Payment failed: ' + response.error.description);
     });
     rzp.open();
   } catch(e) {
-    showToast('⚠️ Razorpay not loaded. Check your internet connection.');
+    showToast('Payment gateway unavailable. Check your internet connection.');
     console.error(e);
   }
 }
@@ -87,7 +87,7 @@ function placeCOD() {
   if (!validateForm()) return;
   const totalAmount = getCartTotal();
   if (totalAmount === 0) {
-    showToast('🛒 Your cart is empty!');
+    showToast('Your cart is empty');
     return;
   }
   const orderId = 'COD' + Date.now();

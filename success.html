@@ -22,7 +22,7 @@
       <a id="whatsapp-share" href="#" target="_blank" class="btn btn-gold">
         <i class="fa-brands fa-whatsapp"></i> <span data-i18n="successWhatsapp">Share on WhatsApp</span>
       </a>
-      <a href="index.html" class="btn btn-royal" data-i18n="successShop">
+      <a href="index.html" class="btn btn-forest" data-i18n="successShop">
         <i class="fa-solid fa-store"></i> Continue Shopping
       </a>
     </div>
@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (lastOrder && lastOrder.items) {
     summaryEl.innerHTML = `
       <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
-        <thead><tr style="background:var(--royal-pale);"><th style="padding:9px;text-align:left;font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.06em;color:var(--royal-mid);">Product</th><th style="padding:9px;text-align:center;font-family:'Cinzel',serif;font-size:0.72rem;color:var(--royal-mid);">Qty</th><th style="padding:9px;text-align:right;font-family:'Cinzel',serif;font-size:0.72rem;color:var(--royal-mid);">Price</th></tr></thead>
-        <tbody>${lastOrder.items.map(item => `<tr style="border-bottom:1px solid var(--border);"><td style="padding:9px;">${item.name}</td><td style="padding:9px;text-align:center;">${item.qty}</td><td style="padding:9px;text-align:right;font-weight:700;">Rs. ${(item.price * item.qty).toLocaleString('en-IN')}</td></tr>`).join('')}<tr><td colspan="2" style="padding:11px 9px;font-family:'Cinzel',serif;font-weight:700;color:var(--royal-deep);">Total</td><td style="padding:11px 9px;text-align:right;font-family:'Cinzel',serif;font-weight:700;color:var(--royal-deep);">Rs. ${lastOrder.total.toLocaleString('en-IN')}</td></tr></tbody>
+        <thead><tr style="background:var(--mint-cream);"><th style="padding:9px;text-align:left;font-family:'Playfair Display',serif;font-size:0.75rem;letter-spacing:0.04em;color:var(--forest);">Product</th><th style="padding:9px;text-align:center;font-family:'Playfair Display',serif;font-size:0.75rem;color:var(--forest);">Qty</th><th style="padding:9px;text-align:right;font-family:'Playfair Display',serif;font-size:0.75rem;color:var(--forest);">Price</th></tr></thead>
+        <tbody>${lastOrder.items.map(item => `<tr style="border-bottom:1px solid var(--border);"><td style="padding:9px;">${item.name}</td><td style="padding:9px;text-align:center;">${item.qty}</td><td style="padding:9px;text-align:right;font-weight:700;">Rs. ${(item.price * item.qty).toLocaleString('en-IN')}</td></tr>`).join('')}<tr><td colspan="2" style="padding:11px 9px;font-family:'Playfair Display',serif;font-weight:700;color:var(--forest-deep);">Total</td><td style="padding:11px 9px;text-align:right;font-family:'Playfair Display',serif;font-weight:700;color:var(--forest-deep);">Rs. ${lastOrder.total.toLocaleString('en-IN')}</td></tr></tbody>
       </table>`;
   }
   const waMsg = encodeURIComponent(`I just placed an order on KisanMart!\nOrder ID: ${orderId}\nPayment: ${method === 'cod' ? 'Cash on Delivery' : 'Online'}\n\nOrganic fertilizers delivered to your farm: https://sb2217.github.io/farm/`);

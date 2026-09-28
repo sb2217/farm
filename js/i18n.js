@@ -27,7 +27,7 @@ const translations = {
     heroSubtitle: "Trusted by 10,000+ Indian Farmers — 100% Natural, 100% Safe",
     heroCta: "Shop Now",
     heroLearnMore: "Learn More",
-    heroTag: "🌿 100% Organic Certified",
+    heroTag: "100% Organic Certified",
 
     // Trust bar
     trust1Num: "10,000+",
@@ -145,7 +145,7 @@ const translations = {
     heroSubtitle: "10,000+ भारतीय किसानों का भरोसा — 100% प्राकृतिक, 100% सुरक्षित",
     heroCta: "अभी खरीदें",
     heroLearnMore: "और जानें",
-    heroTag: "🌿 100% जैविक प्रमाणित",
+    heroTag: "100% जैविक प्रमाणित",
 
     // Trust bar
     trust1Num: "10,000+",
