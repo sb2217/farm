@@ -7,11 +7,20 @@ const translations = {
     navBrand: "KisanMart",
     navHome: "Home",
     navProducts: "Products",
+    navAbout: "About",
     navStats: "Our Stats",
     navTestimonials: "Reviews",
     navContact: "Contact",
     navCart: "Cart",
-    langToggle: "हिन्दी",
+    langToggle: "Hindi",
+
+    // CTA
+    ctaTitle: "Ready to Transform Your Farm?",
+    ctaSubtitle: "Join thousands of farmers who have made the switch to organic. Your soil will thank you.",
+    ctaBtn: "Explore Products",
+
+    // Misc
+    viewAll: "View All Products",
 
     // Hero
     heroTitle: "Pure Organic Fertilizers for Healthy Crops",
@@ -116,11 +125,20 @@ const translations = {
     navBrand: "किसानमार्ट",
     navHome: "होम",
     navProducts: "उत्पाद",
+    navAbout: "हमारे बारे में",
     navStats: "हमारे आँकड़े",
     navTestimonials: "समीक्षाएं",
     navContact: "संपर्क",
     navCart: "कार्ट",
     langToggle: "English",
+
+    // CTA
+    ctaTitle: "अपना खेत बदलने के लिए तैयार हैं?",
+    ctaSubtitle: "हजारों किसानों के साथ जुड़ें जो जैविक खेती अपना चुके हैं।",
+    ctaBtn: "उत्पाद देखें",
+
+    // Misc
+    viewAll: "सभी उत्पाद देखें",
 
     // Hero
     heroTitle: "स्वस्थ फसल के लिए शुद्ध जैविक खाद",
